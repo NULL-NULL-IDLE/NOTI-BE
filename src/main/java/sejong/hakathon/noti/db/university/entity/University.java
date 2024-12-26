@@ -1,17 +1,18 @@
 package sejong.hakathon.noti.db.university.entity;
 
-import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Getter;
 
-@Entity
 @Getter
-@Table(name = "university")
 public class University {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private final Long id;
+    private final String name;
 
-    @Column(name = "name", columnDefinition = "varchar(25)")
-    String name;
+    @Builder
+    public University(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
 }

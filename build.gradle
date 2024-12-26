@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'org.springframework.boot' version '3.4.1'
     id 'io.spring.dependency-management' version '1.1.7'
+    id "nu.studer.jooq" version "8.1"
 }
 
 group = 'sejong.hakathon'
@@ -37,4 +38,16 @@ dependencies {
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+
+// jOOQ 설정
+jooq {
+    generator {
+        generate {
+            relations = true
+        }
+        target {
+
+        }
+    }
 }
