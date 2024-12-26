@@ -1,12 +1,15 @@
 package sejong.hakathon.noti.db.faq.entity;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Getter
+@NoArgsConstructor
 @Table(name = "faq")
 public class FAQ {
 
@@ -31,4 +34,15 @@ public class FAQ {
 
     @Column(name = "update_at", columnDefinition = "varchar(25)")
     LocalDateTime updatedAt;
+
+    @Builder
+    public FAQ(Long id, String title, String content, String semester, String category, int entryYear, LocalDateTime updatedAt) {
+        this.id = id;
+        this.title = title;
+        this.content = content;
+        this.semester = semester;
+        this.category = category;
+        this.entryYear = entryYear;
+        this.updatedAt = updatedAt;
+    }
 }

@@ -18,7 +18,7 @@ public class UniversityController implements UniversityControllerSwagger {
     private final UniversityService universityService;
 
     @GetMapping
-    public ResponseEntity<APISuccessResponse<UniversitiesInformationResponse>> getUniversitiesInformation() {
-        return APISuccessResponse.of(HttpStatus.OK, UniversitiesInformationResponse.of(universityService.getUniversitiesInformation()));
+    public ResponseEntity<APISuccessResponse<UniversitiesInformationResponse>> getUniversitiesInformations() {
+        return APISuccessResponse.of(HttpStatus.OK, UniversitiesInformationResponse.of(universityService.getUniversitiesInformations()));
     }
 }

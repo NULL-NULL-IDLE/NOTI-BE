@@ -2,7 +2,7 @@ plugins {
     id 'java'
     id 'org.springframework.boot' version '3.4.1'
     id 'io.spring.dependency-management' version '1.1.7'
-    id "nu.studer.jooq" version "8.1"
+    id "nu.studer.jooq" version "9.0"
 }
 
 group = 'sejong.hakathon'
@@ -25,7 +25,6 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-jooq'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'com.mysql:mysql-connector-j'
@@ -38,16 +37,4 @@ dependencies {
 
 tasks.named('test') {
     useJUnitPlatform()
-}
-
-// jOOQ 설정
-jooq {
-    generator {
-        generate {
-            relations = true
-        }
-        target {
-
-        }
-    }
 }
