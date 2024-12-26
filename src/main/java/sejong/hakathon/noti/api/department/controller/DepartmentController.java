@@ -14,7 +14,7 @@ import sejong.hakathon.noti.api.department.service.DepartmentService;
 @RestController
 @RequestMapping("/api/v1/departments")
 @RequiredArgsConstructor
-public class DepartmentController {
+public class DepartmentController implements DepartmentControllerSwagger {
 
     private final DepartmentService departmentService;
 
